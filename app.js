@@ -30,21 +30,6 @@ function app(people) {
             break;
         case "no":
             //! TODO: Declare a searchByTrait function //////////////////////////////////////////
-function searchByTrait(){
-    let results = data.filter(function(el){
-        if(el.gender, el.dob, el.height, el.weight, el.eyeColor === "Billy Bob"){
-            return true;
-        }
-        else{
-            return false;
-        }
-    })
-    return results;
-}
-
-let traits = (gender, dob, height, weight, eyeColor);
-console.log('Traits: ', traits)
-
 
             searchResults = searchByTrait(people);
             break;
