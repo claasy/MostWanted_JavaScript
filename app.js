@@ -30,22 +30,6 @@ function app(people) {
             break;
         case "no":
             //! TODO: Declare a searchByTrait function //////////////////////////////////////////
-function searchByTrait(){
-    let results = data.filter(function(el){
-        if(el.gender, el.dob, el.height, el.weight, el.eyeColor === "Billy Bob"){
-            return true;
-        }
-        else{
-            return false;
-        }
-    })
-    return results;
-}
-
-let traits = (gender, dob, height, weight, eyeColor);
-console.log('Traits: ', traits)
-
-
             searchResults = searchByTrait(people);
             break;
         default:
@@ -81,8 +65,7 @@ function mainMenu(person, people) {
         case "info":
             //! TODO: Declare a findPersonInfo function //////////////////////////////////////////
             // HINT: Look for a person-object stringifier utility function to help
-            let personInfo = findPersonInfo(person[0]);
-            alert(personInfo);
+            displayPerson(person[0]);
             break;
         case "family":
             //! TODO: Declare a findPersonFamily function //////////////////////////////////////////
@@ -155,6 +138,14 @@ function displayPeople(people) {
 function displayPerson(person) {
     let personInfo = `First Name: ${person.firstName}\n`;
     personInfo += `Last Name: ${person.lastName}\n`;
+    personInfo += `Gender: ${person.gender}\n`;
+    personInfo += `DOB: ${person.dob}\n`;
+    personInfo += `Height: ${person.height}\n`;
+    personInfo += `Weight: ${person.weight}\n`;
+    personInfo += `Eye color: ${person.eyecolor}\n`;
+    personInfo += `Occupation: ${person.occupation}\n`;
+    personInfo += `Parents: ${person.parents}\n`;
+    personInfo += `Currentspouse: ${person.currentSpouse}\n`
     //! TODO: finish getting the rest of the information to display //////////////////////////////////////////
     alert(personInfo);
 }
@@ -199,3 +190,25 @@ function chars(input) {
 
 //////////////////////////////////////////* End Of Starter Code *//////////////////////////////////////////
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
+
+
+
+
+// What does this function do
+// function searchByTrait(){
+//     let userinput = prompt('Please enter a trait to search by')
+//     let results = data.filter(function(el){
+//         if (el.weight.includes(userinput))
+//     }
+
+
+// function searchbyproperty(){
+//     let userinput = prompt('please enter property: ')
+//     let userinputval = prompt('please enter value: ')
+//     let foundproperty = data.filter(function(el){
+//         if(el[userinput].includes(userinputval){
+//             return true;
+//         }
+    
+//     }
+// }
