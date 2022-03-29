@@ -142,7 +142,7 @@ function displayPerson(person) {
     personInfo += `DOB: ${person.dob}\n`;
     personInfo += `Height: ${person.height}\n`;
     personInfo += `Weight: ${person.weight}\n`;
-    personInfo += `Eye color: ${person.eyecolor}\n`;
+    personInfo += `Eye color: ${person.eyeColor}\n`;
     personInfo += `Occupation: ${person.occupation}\n`;
     personInfo += `Parents: ${person.parents}\n`;
     personInfo += `Currentspouse: ${person.currentSpouse}\n`
@@ -191,7 +191,16 @@ function chars(input) {
 //////////////////////////////////////////* End Of Starter Code *//////////////////////////////////////////
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
 
+function findPersonFamily(person, people){
+    // let personFamily = `Parents: ${person.parents}\n`;
+    // personFamily += `Current Spouse: ${person.currentSpouse}\n`
+    // alert(personFamily);
 
+    // findById()
+    let spouse = findSpouse(people);
+    let parents = findParents(people);
+    let siblings = findSiblings(people);
+}
 
 
 // What does this function do
