@@ -191,24 +191,40 @@ function chars(input) {
 //////////////////////////////////////////* End Of Starter Code *//////////////////////////////////////////
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
 
-function findPersonFamily(person, people){
+function findPersonFamily(somePerson, bunchOfPeople){
+    let parents = findParents(somePerson, bunchOfPeople)
+    let siblings = findSiblings(somePerson, bunchOfPeople)
+    let Spouse = findSpouse(somePerson, bunchOfPeople)
+
+    // format the data into special object
+    let compoundPersonData = { 
+        personId: "",
+        currentSpouse: "",
+        children: [
+            {id: "",
+            firstname: "",
+            lastname: ""
+            },
+        ],
+        grandchildren: [],
+        sibling: siblings,
+    }
+    return compoundPersonData
+    // display or simply return the full amount of data
+    
+}
     // let personFamily = `Parents: ${person.parents}\n`;
     // personFamily += `Current Spouse: ${person.currentSpouse}\n`
     // alert(personFamily);
     // function findById(){
-    function findSpouseAndParents(){
-        let personSpouseAndParents = `currentSpouse: ${person.currentSpouse}\n`;
-            personSpouseAndParents += `Parents: ${person.parents}\n`;
-        alert(personSpouseAndParents);
-        }
-    }
-
+    
     // let parents = findParents(people);
     // let siblings = findSiblings(people);
 
     
 
-
+findPersonFamily(person.id, people)
+findPersonFamily(cash.id, [{},{},{}])
 
 
         
