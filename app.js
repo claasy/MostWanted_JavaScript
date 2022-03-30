@@ -192,39 +192,77 @@ function chars(input) {
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
 
 function findPersonFamily(somePerson, bunchOfPeople){
-    let parents = findParents(somePerson, bunchOfPeople)
-    let siblings = findSiblings(somePerson, bunchOfPeople)
-    let Spouse = findSpouse(somePerson, bunchOfPeople)
+
+
+     let parents = findParents(somePerson, bunchOfPeople)
+     let siblings = findSiblings(somePerson, bunchOfPeople)
+     let currentSpouse = findSpouse(somePerson, bunchOfPeople)
 
     // format the data into special object
     let compoundPersonData = { 
-        personId: "",
-        currentSpouse: "",
+        personId: " ",
+        currentSpouse: " ",
         children: [
-            {id: "",
-            firstname: "",
-            lastname: ""
-            },
+            {id: " ",
+            firstname: " ",
+            lastname: " ",
+            }
         ],
         grandchildren: [],
         sibling: siblings,
+        parent: parents
     }
-    return compoundPersonData
-    // display or simply return the full amount of data
+        return compoundPersonData;
+}    
     
+    
+function findSpouse(){
+    let foundspouse = data.filter(function(el){
+        if( el.id === el.currentSpouse){
+            return true;
+        }
+        else{
+            return false;
+        }})
+    
+   return foundspouse;
+    }
+
+
+function findParents(){
+    let foundparents = data.filter(function(el){
+        if( el.id === el.parents){
+            return true
+        }
+        else{
+            return false
+        }})
+    return foundparents
+}  
+
+
+function findSiblings(people){
+    let foundsiblings = data.filter(function(el){
+        if(el.foundparents)
+    }
 }
+
+
+
+
+// display or simply return the full amount of data
+    
+
     // let personFamily = `Parents: ${person.parents}\n`;
     // personFamily += `Current Spouse: ${person.currentSpouse}\n`
     // alert(personFamily);
     // function findById(){
     
     // let parents = findParents(people);
-    // let siblings = findSiblings(people);
+    // let siblings = findSiblings(people)
+findPersonFamily()    
+    alert(findPersonFamily);
 
-    
-
-findPersonFamily(person.id, people)
-findPersonFamily(cash.id, [{},{},{}])
 
 
         
