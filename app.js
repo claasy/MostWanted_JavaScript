@@ -203,6 +203,11 @@ function findPersonFamily(person, people){
 }
 
 
+
+        
+    
+
+
 // What does this function do
 // function searchByTrait(){
 //     let userinput = prompt('Please enter a trait to search by')
