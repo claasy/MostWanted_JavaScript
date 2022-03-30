@@ -195,12 +195,19 @@ function findPersonFamily(person, people){
     // let personFamily = `Parents: ${person.parents}\n`;
     // personFamily += `Current Spouse: ${person.currentSpouse}\n`
     // alert(personFamily);
+    // function findById(){
+    function findSpouseAndParents(){
+        let personSpouseAndParents = `currentSpouse: ${person.currentSpouse}\n`;
+            personSpouseAndParents += `Parents: ${person.parents}\n`;
+        alert(personSpouseAndParents);
+        }
+    }
 
-    // findById()
-    let spouse = findSpouse(people);
-    let parents = findParents(people);
-    let siblings = findSiblings(people);
-}
+    // let parents = findParents(people);
+    // let siblings = findSiblings(people);
+
+    
+
 
 
 // What does this function do
