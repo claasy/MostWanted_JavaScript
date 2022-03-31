@@ -70,7 +70,7 @@ function mainMenu(person, people) {
     case "family":
       //! TODO: Declare a findPersonFamily function //////////////////////////////////////////
       // HINT: Look for a people-collection stringifier utility function to help
-  
+
       displayPersonAndFamily(person[0], people);
       break;
     case "stringTest":
@@ -156,6 +156,7 @@ function displayPersonAndFamily(person, people) {
   personInfo += `Parents: ${displayPeople(person.parents)}\n`;
   personInfo += `Currentspouse: ${displayPeople(person.currentSpouse)}\n`;
   personInfo += `Siblings: ${displayPeople(person.siblings)}\n`;
+  personInfo += `ID: ${person.id}\n`;
 
   //! TODO: finish getting the rest of the information to display //////////////////////////////////////////
   alert(personInfo);
@@ -250,29 +251,22 @@ function findSiblings(person, people) {
   return foundSiblings;
 }
 
-
-function findPersonDescendants(person, people){
-  
+function findPersonDescendants(person, people) {
+  let descendants = people.filter(function (el) {
+    if (el.parents.includes(person.id)) {
+      return true;
+    }
+  });
+  if(descendants === 0){
+    return []
+  }
+  for (let i = 0; i < descendants.length; i++) {
+    descendants = descendants.concat(findPersonDescendants(person, people));
+  }
+  return descendants;
 }
 
-
-
-
-
-
-
-
 // display or simply return the full amount of data
-
-// let personFamily = `Parents: ${person.parents}\n`;
-// personFamily += `Current Spouse: ${person.currentSpouse}\n`
-// alert(personFamily);
-// function findById(){
-
-// let parents = findParents(people);
-// let siblings = findSiblings(people)
-// findPersonFamily();
-// alert(findPersonFamily);
 
 // What does this function do
 // function searchByTrait(){
