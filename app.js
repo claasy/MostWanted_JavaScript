@@ -73,6 +73,10 @@ function mainMenu(person, people) {
       let personFamily = findPersonFamily(person[0], people);
       alert(personFamily);
       break;
+    case "stringTest":
+      personFamily = findPersonFamily(person[0], people);
+      alert(personFamily);
+      break;
     case "descendants":
       //! TODO: Declare a findPersonDescendants function //////////////////////////////////////////
       // HINT: Review recursion lecture + demo for bonus user story
@@ -136,7 +140,7 @@ function displayPeople(people) {
  * @param {Object} person       A singular object.
  */
 function displayPerson(person, people) {
-  let person = findPersonFamily(person, people);
+  person = findPersonFamily(person, people);
   let personInfo = `First Name: ${person.firstName}\n`;
   personInfo += `Last Name: ${person.lastName}\n`;
   personInfo += `Gender: ${person.gender}\n`;
@@ -150,7 +154,17 @@ function displayPerson(person, people) {
   personInfo += `Siblings: ${displayPeople(person.siblings)}\n`;
   //! TODO: finish getting the rest of the information to display //////////////////////////////////////////
   alert(personInfo);
-}
+  
+  displayPerson()
+  if(el.foundSpouse ==="el.id")
+  (el.foundParents === "el.id")
+  (el.foundSiblings ==="el.id")
+    return true;
+  }
+  else{
+    return "none";
+  }
+  
 // End of displayPerson()
 
 /**
@@ -211,7 +225,7 @@ function findPersonFamily(somePerson, bunchOfPeople) {
 }
 
 function findSpouse(person, people) {
-  let foundspouse = people.filter(function (el) {
+  let foundSpouse = people.filter(function (el) {
     if (el.id === person.currentSpouse) {
       return true;
     } else {
@@ -219,28 +233,29 @@ function findSpouse(person, people) {
     }
   });
 
-  return foundspouse;
+  return foundSpouse;
 }
 
 function findParents(person, people) {
-  let foundparents = people.filter(function (el) {
+  let foundParents = people.filter(function (el) {
     if (person.parents.includes(el.id)) {
       return true;
     } else {
       return false;
     }
   });
-  return foundparents;
+  return foundParents;
 }
 
 function findSiblings(person, people) {
-  let foundsiblings = people.filter(function (el) {
+  let foundSiblings = people.filter(function (el) {
     if (el.parents === person.parents) {
       return true;
     }
   });
-  return foundsiblings;
+  return foundSiblings;
 }
+
 
 // display or simply return the full amount of data
 
