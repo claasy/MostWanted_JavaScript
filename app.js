@@ -140,6 +140,13 @@ function displayPeople(people) {
  * @param {Object} person       A singular object.
  */
 function displayPerson(person, people) {
+  if(el.foundSpouse ==="el.id")
+  (el.foundParents === "el.id")
+  (el.foundSiblings ==="el.id")
+      return true;
+  }
+  else{
+      return 'None'}
   person = findPersonFamily(person, people);
   let personInfo = `First Name: ${person.firstName}\n`;
   personInfo += `Last Name: ${person.lastName}\n`;
@@ -154,16 +161,6 @@ function displayPerson(person, people) {
   personInfo += `Siblings: ${displayPeople(person.siblings)}\n`;
   //! TODO: finish getting the rest of the information to display //////////////////////////////////////////
   alert(personInfo);
-  
-  displayPerson()
-  if(el.foundSpouse ==="el.id")
-  (el.foundParents === "el.id")
-  (el.foundSiblings ==="el.id")
-    return true;
-  }
-  else{
-    return "none";
-  }
   
 // End of displayPerson()
 
