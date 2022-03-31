@@ -65,13 +65,13 @@ function mainMenu(person, people) {
     case "info":
       //! TODO: Declare a findPersonInfo function //////////////////////////////////////////
       // HINT: Look for a person-object stringifier utility function to help
-      displayPerson(person[0]);
+      displayPersonAndFamily(person[0], people);
       break;
     case "family":
       //! TODO: Declare a findPersonFamily function //////////////////////////////////////////
       // HINT: Look for a people-collection stringifier utility function to help
-      let personFamily = findPersonFamily(person[0], people);
-      alert(personFamily);
+  
+      displayPersonAndFamily(person[0], people);
       break;
     case "stringTest":
       personFamily = findPersonFamily(person[0], people);
@@ -139,15 +139,12 @@ function displayPeople(people) {
  * in order to easily send the information to the user in the form of an alert().
  * @param {Object} person       A singular object.
  */
-function displayPerson(person, people) {
-  if(el.foundSpouse ==="el.id")
-  (el.foundParents === "el.id")
-  (el.foundSiblings ==="el.id")
-      return true;
-  }
-  else{
-      return 'None'}
+function displayPersonAndFamily(person, people) {
   person = findPersonFamily(person, people);
+  // if (person.parents.length === 0) return "none";
+  // if (person.siblings.length === 0) return "none";
+  // if (person.currentSpouse.length === 0) return "none";
+
   let personInfo = `First Name: ${person.firstName}\n`;
   personInfo += `Last Name: ${person.lastName}\n`;
   personInfo += `Gender: ${person.gender}\n`;
@@ -159,9 +156,10 @@ function displayPerson(person, people) {
   personInfo += `Parents: ${displayPeople(person.parents)}\n`;
   personInfo += `Currentspouse: ${displayPeople(person.currentSpouse)}\n`;
   personInfo += `Siblings: ${displayPeople(person.siblings)}\n`;
+
   //! TODO: finish getting the rest of the information to display //////////////////////////////////////////
   alert(personInfo);
-  
+}
 // End of displayPerson()
 
 /**
@@ -210,13 +208,12 @@ function findPersonFamily(somePerson, bunchOfPeople) {
   let currentSpouse = findSpouse(somePerson, bunchOfPeople);
 
   // format the data into special object
-  let compoundPersonData = {
-    personId: somePerson.id,
+  let compoundPersonData = somePerson;
+  compoundPersonData = {
+    ...somePerson, // id: , firstName: ,
     currentSpouse: currentSpouse,
-    children: [{ id: " ", firstname: " ", lastname: " " }],
-    grandchildren: [],
-    sibling: siblings,
-    parent: parents,
+    siblings: siblings,
+    parents: parents,
   };
   return compoundPersonData;
 }
@@ -246,12 +243,23 @@ function findParents(person, people) {
 
 function findSiblings(person, people) {
   let foundSiblings = people.filter(function (el) {
-    if (el.parents === person.parents) {
+    if (el.parents === person.parents && person != el) {
       return true;
     }
   });
   return foundSiblings;
 }
+
+
+function findPersonDescendants(person, people){
+  
+}
+
+
+
+
+
+
 
 
 // display or simply return the full amount of data
@@ -263,8 +271,8 @@ function findSiblings(person, people) {
 
 // let parents = findParents(people);
 // let siblings = findSiblings(people)
-findPersonFamily();
-alert(findPersonFamily);
+// findPersonFamily();
+// alert(findPersonFamily);
 
 // What does this function do
 // function searchByTrait(){
